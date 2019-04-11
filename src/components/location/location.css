@@ -1,0 +1,9 @@
+.locationWrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.locationContainer {
+    border: 2px solid purple;
+    background-color: aqua
+}
