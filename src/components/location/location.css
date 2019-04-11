@@ -4,6 +4,7 @@
 }
 
 .locationContainer {
-    border: 2px solid purple;
-    background-color: aqua
+    /* border: 2px solid purple;
+    background-color: aqua */
+    font-size: 10px;
 }
