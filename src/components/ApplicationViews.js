@@ -101,7 +101,7 @@ export default class ApplicationViews extends Component {
                     return <EmployeeList employees={this.state.employees} />
                 }} />
                 <Route path="/owners" render={(props) => {
-                    return <OwnerList owners={this.state.owners} />
+                    return <OwnerList owners={this.state.owners} animals={this.state.animals}/>
                 }} />
             </React.Fragment>
         )

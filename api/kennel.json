@@ -18,9 +18,9 @@
         { "id": 2, "name": "Nashville South", "address": "10101 Binary Court" }
     ],
     "owners": [
-        { "id": 1, "name": "Jameka Echols", "phoneNumber": "615-977-9837"},
-        { "id": 2, "name": "DeSean Webster", "phoneNumber": "615-977-1111"},
-        { "id": 3, "name": "Delon Echols", "phoneNumber": "615-977-2222"},
-        { "id": 4, "name": "Shawn Williams", "phoneNumber": "615-977-3333"}
+        { "id": 1, "name": "Jameka Echols", "phoneNumber": "615-977-9837", "animalId":3},
+        { "id": 2, "name": "DeSean Webster", "phoneNumber": "615-977-1111", "animalId":1},
+        { "id": 3, "name": "Delon Echols", "phoneNumber": "615-977-2222", "animalId":2},
+        { "id": 4, "name": "Shawn Williams", "phoneNumber": "615-977-3333", "animalId":4}
     ]
 }
