@@ -35,15 +35,28 @@ export default class ApplicationViews extends Component {
     }
 
     //this function will handle the delete btn from AnimalList
-    deleteAnimal = id => {
-        return fetch(`http://localhost:5002/animals/${id}`, {
+    // deleteAnimal = id => {
+    //     return fetch(`http://localhost:5002/animals/${id}`, {
+    //         method: "DELETE"
+    //     })
+    //     .then(e => e.json())
+    //     .then(() => fetch(`http://localhost:5002/animals`))
+    //     .then(e => e.json())
+    //     .then(animals => this.setState({
+    //         animals: animals
+    //     })
+    //   )
+    // }
+
+    deleteItem = (id,resource) => {
+        return fetch(`http://localhost:5002/${resource}/${id}`, {
             method: "DELETE"
         })
         .then(e => e.json())
-        .then(() => fetch(`http://localhost:5002/animals`))
+        .then(() => fetch(`http://localhost:5002/${resource}`))
         .then(e => e.json())
-        .then(animals => this.setState({
-            animals: animals
+        .then(obj => this.setState({
+            [resource]: obj
         })
       )
     }
@@ -55,13 +68,13 @@ export default class ApplicationViews extends Component {
                     return <LocationList locations={this.state.locations} />
                 }} />
                 <Route path="/animals" render={(props) => {
-                    return <AnimalList animals={this.state.animals} deleteAnimal={this.deleteAnimal}/>
+                    return <AnimalList animals={this.state.animals} deleteItem={this.deleteItem}/>
                 }} />
                 <Route path="/employees" render={(props) => {
-                    return <EmployeeList employees={this.state.employees} />
+                    return <EmployeeList employees={this.state.employees} deleteItem={this.deleteItem} />
                 }} />
                 <Route path="/owners" render={(props) => {
-                    return <OwnerList owners={this.state.owners} animals={this.state.animals}/>
+                    return <OwnerList owners={this.state.owners} animals={this.state.animals} deleteItem={this.deleteItem}/>
                 }} />
             </React.Fragment>
         )
