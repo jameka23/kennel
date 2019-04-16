@@ -5,6 +5,7 @@ import AnimalList from './animal/AnimalList'
 import LocationList from './location/LocationList'
 import EmployeeList from './employee/EmployeeList'
 import OwnerList from './owner/OwnerList'
+import AnimalManager from '../components/modules/AnimalManager'
 
 
 export default class ApplicationViews extends Component {
@@ -19,8 +20,7 @@ export default class ApplicationViews extends Component {
     componentDidMount() {
         const newState = {}
 
-        fetch("http://localhost:5002/animals")
-            .then(r => r.json())
+            AnimalManager.getAll()
             .then(animals => newState.animals = animals)
             .then(() => fetch("http://localhost:5002/employees")
             .then(r => r.json()))
