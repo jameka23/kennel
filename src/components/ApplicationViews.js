@@ -9,6 +9,7 @@ import AnimalManager from '../components/modules/AnimalManager'
 import OwnerManager from '../components/modules/OwnerManager'
 import EmployeeManager from '../components/modules/EmployeeManager'
 import LocationManager from '../components/modules/LocationManager'
+import APIManager from '../components/modules/APIManager'
 
 
 export default class ApplicationViews extends Component {
@@ -49,10 +50,7 @@ export default class ApplicationViews extends Component {
     // }
 
     deleteItem = (id,resource) => {
-        return fetch(`http://localhost:5002/${resource}/${id}`, {
-            method: "DELETE"
-        })
-        .then(e => e.json())
+        APIManager.delete(id, resource)
         .then(() => fetch(`http://localhost:5002/${resource}`))
         .then(e => e.json())
         .then(obj => this.setState({
@@ -60,6 +58,17 @@ export default class ApplicationViews extends Component {
         })
       )
     }
+
+    // deleteItem = (id,manager,resource) => {
+    //     return `${manager}`.delete(`${id}`)
+    //     .then(e => e.json())
+    //     `${manager}`.getAll()
+    //     .then(e => e.json())
+    //     .then(obj => this.setState({
+    //         [resource]: obj
+    //     })
+    //   )
+    // }
 
     render() {
         return (

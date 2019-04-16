@@ -8,5 +8,8 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/owners`).then(e => e.json())
+  },
+  delete(id) {
+      return fetch(`${remoteURL}/owners/${id}`)
   }
 }
