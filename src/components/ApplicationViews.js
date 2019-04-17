@@ -9,7 +9,7 @@ import AnimalManager from '../components/modules/AnimalManager'
 import EmployeeManager from '../components/modules/EmployeeManager'
 import OwnerManager from '../components/modules/OwnerManager'
 import LocationManager from '../components/modules/LocationManager'
-import APIManager from '../components/modules/APIManager'
+
 
 
 export default class ApplicationViews extends Component {
@@ -24,17 +24,17 @@ export default class ApplicationViews extends Component {
     componentDidMount() {
         const newState = {}
 
-            AnimalManager.getAll("animals")
+            AnimalManager.all()
             .then(animals => newState.animals = animals)
-            EmployeeManager.getAll("employees")
+            .then(() => EmployeeManager.all())
             .then(employees => newState.employees = employees)
-            LocationManager.getAll("locations")
+            .then(() => LocationManager.all())
             .then(locations => newState.locations = locations)
-            OwnerManager.getAll("owners")
+            .then(() => OwnerManager.all())
             .then(owners => newState.owners = owners)
             .then(() => this.setState(newState))
     }
-
+s
     // this function will handle the delete btn from AnimalList
     deleteAnimal = id => {
         AnimalManager.removeAndList(id)
