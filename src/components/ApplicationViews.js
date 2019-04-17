@@ -37,19 +37,27 @@ export default class ApplicationViews extends Component {
 
     // this function will handle the delete btn from AnimalList
     deleteAnimal = id => {
-        return fetch(`http://localhost:5002/animals/${id}`, {
-            method: "DELETE"
-        })
-        .then(e => e.json())
-        .then(() => fetch(`http://localhost:5002/animals`))
-        .then(e => e.json())
+        AnimalManager.removeAndList(id)
         .then(animals => this.setState({
             animals: animals
         })
       )
     }
 
-    //Thif function will delete the owners from the OwnerList
+    // this function will delete and fire an employee
+    deleteEmployee = id => {
+        return fetch(`http://localhost:5002/employees/${id}`, {
+            method: "DELETE"
+        })
+        .then(e => e.json())
+        .then(() => fetch(`http://localhost:5002/employees`))
+        .then(e => e.json())
+        .then(employees => this.setState({
+            employees: employees
+        }))
+    }
+
+    //This function will delete the owners from the OwnerList
     deleteOwner = id => {
         return fetch(`http://localhost:5002/owners/${id}`, {
             method: "DELETE"
@@ -92,7 +100,7 @@ export default class ApplicationViews extends Component {
                     return <AnimalList animals={this.state.animals} deleteAnimal={this.deleteAnimal}/>
                 }} />
                 <Route path="/employees" render={(props) => {
-                    return <EmployeeList employees={this.state.employees} />
+                    return <EmployeeList employees={this.state.employees} deleteEmployee={this.deleteEmployee}/>
                 }} />
                 <Route path="/owners" render={(props) => {
                     return <OwnerList owners={this.state.owners} animals={this.state.animals} deleteOwner={this.state.owners} />
