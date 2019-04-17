@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './owner.css'
 
 
 export default class OwnerList extends Component {
@@ -12,13 +13,13 @@ export default class OwnerList extends Component {
                             <div className="card-body">
                                 <h5 className="card-title">
                                 Name: {owner.name}
-                                <p>Phone: {owner.phoneNumber}
-                                Animal:                        
+                                <p className="phone-card">Phone: {owner.phoneNumber}
+                                {"Animal: "+ " "}
                                 {
                                     this.props.animals.find(animal => animal.id === owner.animalId).name 
                                 }  
                                 </p>
-                                <button onClick={() => this.props.deleteItem(owner.id, "owners")}className="card-link">Delete</button>
+                                <button onClick={() => this.props.deleteOwner(owner.id)} className="card-link">Delete</button>
                                 </h5>
                             </div>
                         </div>

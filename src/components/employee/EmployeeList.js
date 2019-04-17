@@ -11,7 +11,7 @@ export default class EmployeeList extends Component {
                         <div className="card-body">
                             <h5 className="card-title">
                                 {employee.name}
-                                <button onClick={()=>this.props.deleteItem(employee.id,"employees")} className="card-link">Delete</button>
+                                <button onClick={()=>this.props.deleteEmployee(employee.id)} className="card-link">Delete</button>
                             </h5>
                         </div>
 
