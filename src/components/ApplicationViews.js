@@ -5,10 +5,6 @@ import AnimalList from './animal/AnimalList'
 import LocationList from './location/LocationList'
 import EmployeeList from './employee/EmployeeList'
 import OwnerList from './owner/OwnerList'
-import AnimalManager from '../components/modules/AnimalManager'
-import OwnerManager from '../components/modules/OwnerManager'
-import EmployeeManager from '../components/modules/EmployeeManager'
-import LocationManager from '../components/modules/LocationManager'
 import APIManager from '../components/modules/APIManager'
 
 
@@ -24,13 +20,13 @@ export default class ApplicationViews extends Component {
     componentDidMount() {
         const newState = {}
 
-            AnimalManager.getAll()
+            APIManager.getAll("animals")
             .then(animals => newState.animals = animals)
-            EmployeeManager.getAll()
+            APIManager.getAll("employees")
             .then(employees => newState.employees = employees)
-            LocationManager.getAll()
+            APIManager.getAll("locations")
             .then(locations => newState.locations = locations)
-            OwnerManager.getAll()
+            APIManager.getAll("owners")
             .then(owners => newState.owners = owners)
             .then(() => this.setState(newState))
     }
