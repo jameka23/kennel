@@ -6,8 +6,9 @@ import "./animal.css"
 export default class AnimalList extends Component {
     render() {
         return (
-            <section className="content animals">
-                <h3>Our Animals</h3>
+            <section >
+                <h3 className="animal-head">Our Animals</h3>
+                <div className="content animals">
                 {
                     this.props.animals.map(animal => 
                         <div key={animal.id} className="card">
@@ -24,6 +25,7 @@ export default class AnimalList extends Component {
                         </div>
                     )
                 }
+                </div>
             </section>
         )
     }
