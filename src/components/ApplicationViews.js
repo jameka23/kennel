@@ -14,6 +14,7 @@ import { withRouter } from 'react-router'
 import EmployeeDetail from './employee/EmployeeDetail';
 import OwnerDetail from './owner/OwnerDetail'
 import LocationDetail from './location/LocationDetail'
+import AnimalForm from './animal/AnimalForm'
 
 
 
@@ -130,6 +131,9 @@ class ApplicationViews extends Component {
                     matches only numbers after the final slash in the URL
                         http://localhost:3000/animals/jack
                 */}
+                <Route path="/animal/new" render={(props) =>{
+                    return <AnimalForm {...props} addAddress={this.addAnimal} employees={this.state.employees}/>
+                }}/>
                 <Route path="/animals/:animalId(\d+)" render={(props) => {
                     // Find the animal with the id of the route parameter
                     let animal = this.state.animals.find(animal =>
