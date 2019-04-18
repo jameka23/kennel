@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import owner from './owners.svg'
 import './owner.css'
 
 
@@ -12,6 +13,7 @@ export default class OwnerList extends Component {
                         <div key={owner.id} className="card">
                             <div className="card-body">
                                 <h5 className="card-title">
+                                <img src={ owner } className="owner--icon" alt="owner--icon"/>
                                 Name: {owner.name}
                                 <p className="phone-card">Phone: {owner.phoneNumber}
                                 {"Animal: "+ " "}
