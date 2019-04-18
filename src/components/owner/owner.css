@@ -1,6 +1,9 @@
 .content {
     display: flex;
     justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 7%;
 }
 .card-title {
     display: flex;
@@ -13,4 +16,8 @@
 }
 .phone-card {
     padding: 5%;
+}
+.owner--icon{
+    width: 89%;
+    height: 89%;
 }

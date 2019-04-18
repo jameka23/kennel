@@ -23,10 +23,6 @@
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "Jessica Younker"
-    },
-    {
       "id": 2,
       "name": "Jordan Nelson"
     },
@@ -37,18 +33,31 @@
     {
       "id": 4,
       "name": "Blaise Roberts"
+    },
+    {
+      "id": 5,
+      "name": "Jackson Bluent"
+    },
+    {
+      "id": 6,
+      "name": "Christy Plum"
     }
   ],
   "locations": [
     {
-      "id": 1,
-      "name": "Nashville North",
-      "address": "500 Circle Way"
-    },
-    {
       "id": 2,
       "name": "Nashville South",
       "address": "10101 Binary Court"
+    },
+    {
+      "id": 3,
+      "name": "Nashville East",
+      "address": "1233 Bees Knees Ave"
+    },
+    {
+      "id": 4,
+      "name": "Nashville West",
+      "address": "712 Green Weeds Blvd"
     }
   ],
   "owners": [
@@ -59,22 +68,28 @@
       "animalId": 3
     },
     {
-      "id": 2,
-      "name": "Delon Echols",
-      "phoneNumber": "615-977-2222",
-      "animalId": 2
-    },
-    {
       "id": 3,
       "name": "Tyler Echols",
       "phoneNumber": "615-977-1111",
-      "animalId": 2
+      "animalId": 4
     },
     {
       "id": 4,
       "name": "Shawn Echols",
       "phoneNumber": "615-977-2333",
       "animalId": 2
+    },
+    {
+      "id": 2,
+      "name": "Delon Echols",
+      "phoneNumber": "615-977-1203",
+      "animalId": 1
+    },
+    {
+      "id": 5,
+      "name": "Fred Echols",
+      "phoneNumber": "615-977-1928",
+      "animalId": 3
     }
   ]
 }

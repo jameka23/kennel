@@ -1,0 +1,19 @@
+.employee{
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 7%;
+}
+.employee-head{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+.emp--icon {
+    width: 89%;
+    height: 89%;
+}
+.card {
+    margin: 2%;
+}
