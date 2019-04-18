@@ -1,29 +1,3 @@
-// const remoteURL = "http://localhost:5002"
-
-
-//just a javascript module not a component
-// export default {
-//   get(id, resource) {
-//     return fetch(`${remoteURL}/${resource}/${id}`).then(e => e.json())
-//   },
-//   getAll(resource) {
-//     return fetch(`${remoteURL}/${resource}`).then(e => e.json())
-//   },
-//   delete(id, resource) {
-//       return fetch(`${remoteURL}/${resource}/${id}`,{
-//           method: "DELETE"
-//       })
-//       .then(e => e.json())
-//   }
-// }
-// const apiManager = Object.create({},{
-//   get(id, resource) {
-//     return fetch(`${remoteURL}/${resource}/${id}`).then(e => e.json())
-//   },
-//   getAll(resource) {
-//     return fetch(`${remoteURL}/${resource}`).then(e => e.json())
-//   }
-// })
 const remoteURL = "http://localhost:5002"
 
 export default Object.create(null, {
@@ -32,11 +6,6 @@ export default Object.create(null, {
     },
     get: {
         value: function (id) {
-            /*
-                Since the purpose of this module is to be used by
-                all of the more specialized one, then the string
-                of `animals` should not be hard coded here.
-            */
             return fetch(`${remoteURL}/${this.resource}/${id}`).then(e => e.json())
         }
     },
@@ -63,13 +32,25 @@ export default Object.create(null, {
         .then(e => e.json())
         // .then(() => this.all())
       }
+    },
+    post: {
+      value: function (newAnimalObj) {
+        return fetch(`${remoteURL}/${this.resource}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newAnimalObj)
+        }).then(r => r.json())
+      }
     }
 })
-  // removeAndList(id) {
-  //   return fetch(`http://localhost:5002/animals/${id}`, {
-  //     method: "DELETE"
-  //   })
-  //   .then(r => r.json())
-  //   .then(() => fetch(`http://localhost:5002/animals`))
-  //   .then(e => e.json)
-  // }
+// post(newAnimal) {
+//   return fetch(`${remoteURL}/animals`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(newAnimal)
+//   }).then(data => data.json())
+// }

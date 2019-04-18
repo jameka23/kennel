@@ -42,3 +42,11 @@
     display: flex;
     justify-content: center;
 }
+.animalButton {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 0 10px 0;
+  }
+.animalForm{
+    margin-top: 5%;
+}
