@@ -32,6 +32,17 @@ export default Object.create(null, {
         .then(e => e.json())
         // .then(() => this.all())
       }
+    },
+    post: {
+      value: function (newAnimalObj) {
+        return fetch(`${remoteURL}/${this.resource}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newAnimalObj)
+        }).then(r => r.json())
+      }
     }
 })
 // post(newAnimal) {

@@ -19,6 +19,18 @@
     {
       "id": 5,
       "name": "Hanson"
+    },
+    {
+      "name": "Kojoe",
+      "breed": "Husky",
+      "employeeId": 5,
+      "id": 6
+    },
+    {
+      "name": "Buddy",
+      "breed": "Poodle",
+      "employeeId": 3,
+      "id": 7
     }
   ],
   "employees": [

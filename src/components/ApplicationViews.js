@@ -80,6 +80,18 @@ class ApplicationViews extends Component {
             this.setState({locations: locations})
         })
     }
+
+    // this function will make a post to the database for the animals resource
+    addAnimal = newAnimalObj => {
+        AnimalManager.post(newAnimalObj)
+        .then(() => AnimalManager.all())
+        .then(animals => {
+            this.props.history.push("/animals")
+            this.setState({animals:animals})
+        })
+    }
+
+
     // deleteItem = (id,resource) => {
     //     APIManager.delete(id, resource)
     //     .then(() => fetch(`http://localhost:5002/${resource}`))
@@ -121,18 +133,10 @@ class ApplicationViews extends Component {
                     return <LocationDetail location={location} deleteLocation={this.deleteLocation}/>
                 }}/>
                 <Route exact path="/animals" render={(props) => {
-                    return <AnimalList animals={this.state.animals} deleteAnimal={this.deleteAnimal} />
+                    return <AnimalList {...props} animals={this.state.animals} deleteAnimal={this.deleteAnimal} />
                 }} />
-                {/*
-                    This is a new route to handle a URL with the following pattern:
-                        http://localhost:3000/animals/1
-
-                    It will not handle the following URL because the `(\d+)`
-                    matches only numbers after the final slash in the URL
-                        http://localhost:3000/animals/jack
-                */}
-                <Route path="/animal/new" render={(props) =>{
-                    return <AnimalForm {...props} addAddress={this.addAnimal} employees={this.state.employees}/>
+                <Route path="/animals/new" render={(props) =>{
+                    return <AnimalForm {...props} addAnimal={this.addAnimal} employees={this.state.employees}/>
                 }}/>
                 <Route path="/animals/:animalId(\d+)" render={(props) => {
                     // Find the animal with the id of the route parameter
