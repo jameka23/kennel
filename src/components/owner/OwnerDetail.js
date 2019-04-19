@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import owners from './owners.svg'
+import owners from './owner.png'
 import './owner.css'
 
 export default class Owner extends Component {
@@ -15,6 +15,13 @@ export default class Owner extends Component {
                         <h4 className="card-title">
                             <img src={ owners } className="icon--owner"  alt="owner-icon"/>
                             { this.props.owner.name }
+                            { this.props.owner.phoneNumber }
+                            {/* <div>                            {
+                                this.props.animals.find(animal => (
+                                    animal.id === this.props.owner.animalId
+                                )).name
+                            }
+                            </div> */}
                         </h4>
                         <button onClick={
                                 () => {
