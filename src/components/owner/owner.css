@@ -1,4 +1,9 @@
-.content {
+.owner--head{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+.owner {
     display: flex;
     justify-content: space-evenly;
     justify-content: center;
@@ -20,4 +25,12 @@
 .owner--icon{
     width: 89%;
     height: 89%;
+}
+.ownerButton{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 0 10px 0;
+}
+.ownerForm{
+    margin-top: 5%;
 }

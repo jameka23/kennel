@@ -15,7 +15,8 @@ import EmployeeDetail from './employee/EmployeeDetail';
 import OwnerDetail from './owner/OwnerDetail'
 import LocationDetail from './location/LocationDetail'
 import AnimalForm from './animal/AnimalForm'
-
+import EmployeeForm from './employee/EmployeeForm'
+import OwnerForm from './owner/OwnerForm'
 
 
 class ApplicationViews extends Component {
@@ -91,7 +92,25 @@ class ApplicationViews extends Component {
         })
     }
 
+    // this function will make a post to the db for employees
+    addEmployee = newEmployeeObj => {
+        EmployeeManager.post(newEmployeeObj)
+        .then(() => EmployeeManager.all())
+        .then(employees => {
+            this.props.history.push("/employees")
+            this.setState({employees: employees})
+        })
+    }
 
+    // this function will make a post request to the db for owners
+    addOwner = newOwnerObj => {
+        OwnerManager.post(newOwnerObj)
+        .then(() => OwnerManager.all())
+        .then(owners => {
+            this.props.history.push("/owners")
+            this.setState({owners:owners})
+        })
+    }
     // deleteItem = (id,resource) => {
     //     APIManager.delete(id, resource)
     //     .then(() => fetch(`http://localhost:5002/${resource}`))
@@ -153,8 +172,11 @@ class ApplicationViews extends Component {
                         deleteAnimal={this.deleteAnimal} />
                 }} />
                 <Route exact path="/employees" render={(props) => {
-                    return <EmployeeList employees={this.state.employees} deleteEmployee={this.deleteEmployee} />
+                    return <EmployeeList {...props} employees={this.state.employees} deleteEmployee={this.deleteEmployee} />
                 }} />
+                <Route path="/employees/new" render={(props) => {
+                    return <EmployeeForm {...props} addEmployee={this.addEmployee} />
+                }}/>
                 <Route path="/employees/:employeeId(\d+)" render={(props) => {
                     let employee = this.state.employees.find(emp => 
                         emp.id === parseInt(props.match.params.employeeId)    
@@ -171,7 +193,10 @@ class ApplicationViews extends Component {
                         deleteEmployee={this.deleteEmployee}/>
                 }} />
                 <Route exact path="/owners" render={(props) => {
-                    return <OwnerList owners={this.state.owners} deleteOwner={this.deleteOwner} />
+                    return <OwnerList {...props} owners={this.state.owners} deleteOwner={this.deleteOwner} />
+                }} />
+                <Route path="/owners/new" render={(props) => {
+                    return <OwnerForm {...props} addOwner={this.addOwner} animals={this.state.animals}/>
                 }} />
                 <Route path="/owners/:ownersId(\d+)" render={(props) => {
                     let owner = this.state.owners.find(owner => 
@@ -184,7 +209,8 @@ class ApplicationViews extends Component {
                     }
 
                     return <OwnerDetail owner={ owner } 
-                    deleteOwner={this.deleteOwner} />
+                    deleteOwner={this.deleteOwner} 
+                    animals={this.state.animals}/>
                 }} />
             </React.Fragment>
         )

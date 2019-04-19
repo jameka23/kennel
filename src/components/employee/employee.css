@@ -17,3 +17,11 @@
 .card {
     margin: 2%;
 }
+.employeeButton {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 0 10px 0;
+}
+.employeeForm{
+    margin-top: 5%;
+}

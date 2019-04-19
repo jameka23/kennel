@@ -21,12 +21,6 @@
       "name": "Hanson"
     },
     {
-      "name": "Kojoe",
-      "breed": "Husky",
-      "employeeId": 5,
-      "id": 6
-    },
-    {
       "name": "Buddy",
       "breed": "Poodle",
       "employeeId": 3,
@@ -43,16 +37,16 @@
       "name": "Zoe LeBlanc"
     },
     {
-      "id": 4,
-      "name": "Blaise Roberts"
-    },
-    {
       "id": 5,
       "name": "Jackson Bluent"
     },
     {
       "id": 6,
       "name": "Christy Plum"
+    },
+    {
+      "name": "Jeremy Stuart",
+      "id": 7
     }
   ],
   "locations": [
@@ -102,6 +96,12 @@
       "name": "Fred Echols",
       "phoneNumber": "615-977-1928",
       "animalId": 3
+    },
+    {
+      "name": "Latonja Webster",
+      "phoneNumber": "6186161432",
+      "animalId": "3",
+      "id": 6
     }
   ]
 }
