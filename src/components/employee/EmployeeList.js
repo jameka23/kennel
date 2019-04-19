@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import emp from './employee-icon.jpg'
 import './employee.css'
+import AnimalCard from '../animal/AnimalCard'
 
 export default class EmployeeList extends Component {
     render() {
@@ -26,6 +27,14 @@ export default class EmployeeList extends Component {
                                     <Link className="nav-link" to={`/employees/${employee.id}`}>Detail</Link>
                                     <button onClick={()=>this.props.deleteEmployee(employee.id)} className="card-link">Delete</button>
                                 </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Caretaker For</h6>
+                                <div className="animals--caretaker">
+                                {
+                                    this.props.animals
+                                        .filter(theAnimal => theAnimal.employeeId === employee.id)
+                                        .map(theAnimal => <AnimalCard key={theAnimal.id} animal={theAnimal} {...this.props} />)
+                                }
+                                </div>
                             </div>
 
                         </div>
