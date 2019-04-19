@@ -29,23 +29,28 @@
   "employees": [
     {
       "id": 1,
-      "name": "Jordan Nelson"
+      "name": "Jordan Nelson",
+      "locationId":3
     },
     {
       "id": 2,
-      "name": "Zoe LeBlanc"
+      "name": "Zoe LeBlanc",
+      "locationId":2
     },
     {
       "id": 3,
-      "name": "Jackson Bluent"
+      "name": "Jackson Bluent",
+      "locationId":4
     },
     {
       "id": 4,
-      "name": "Christy Plum"
+      "name": "Christy Plum",
+      "locationId":2
     },
     {
       "name": "Jeremy Stuart",
-      "id": 5
+      "id": 5,
+      "locationId":3
     }
   ],
   "locations": [

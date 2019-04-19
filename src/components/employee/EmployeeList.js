@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import emp from './employee-icon.jpg'
 import './employee.css'
+import '../animal/animal.css'
 import AnimalCard from '../animal/AnimalCard'
 
 export default class EmployeeList extends Component {
