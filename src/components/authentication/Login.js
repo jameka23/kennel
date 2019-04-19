@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import './login.css'
 
 
 export default class Login extends Component {
@@ -35,13 +36,14 @@ export default class Login extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleLogin}>
+            <form onSubmit={this.handleLogin} className="loginForm">
                 <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <label htmlFor="inputEmail">
                     Email address
                 </label>
                 <input onChange={this.handleFieldChange} type="email"
                        id="email"
+                       className="form-control"
                        placeholder="Email address"
                        required="" autoFocus="" />
                 <label htmlFor="inputPassword">
@@ -49,10 +51,12 @@ export default class Login extends Component {
                 </label>
                 <input onChange={this.handleFieldChange} type="password"
                        id="password"
+                       className="form-control"
                        placeholder="Password"
                        required="" />
-                <button type="submit">
+                <button type="submit" className="btn btn-primary" >
                     Sign in
+                    
                 </button>
             </form>
         )
