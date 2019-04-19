@@ -24,33 +24,43 @@
       "id": 5,
       "name": "Hanson",
       "employeeId": 5
+    },
+    {
+      "name": "Kojoe",
+      "breed": "Pincher",
+      "employeeId": 6,
+      "id": 6
     }
   ],
   "employees": [
     {
       "id": 1,
       "name": "Jordan Nelson",
-      "locationId":3
+      "locationId": 3
     },
     {
       "id": 2,
       "name": "Zoe LeBlanc",
-      "locationId":2
+      "locationId": 2
     },
     {
       "id": 3,
       "name": "Jackson Bluent",
-      "locationId":4
+      "locationId": 4
     },
     {
       "id": 4,
       "name": "Christy Plum",
-      "locationId":2
+      "locationId": 2
     },
     {
       "name": "Jeremy Stuart",
       "id": 5,
-      "locationId":3
+      "locationId": 3
+    },
+    {
+      "name": "Louis Bouton",
+      "id": 6
     }
   ],
   "locations": [
@@ -78,12 +88,6 @@
       "animalId": 3
     },
     {
-      "id": 3,
-      "name": "Tyler Echols",
-      "phoneNumber": "615-977-1111",
-      "animalId": 4
-    },
-    {
       "id": 4,
       "name": "Shawn Echols",
       "phoneNumber": "615-977-2333",
@@ -100,12 +104,6 @@
       "name": "Fred Echols",
       "phoneNumber": "615-977-1928",
       "animalId": 3
-    },
-    {
-      "name": "Latonja Webster",
-      "phoneNumber": "6186161432",
-      "animalId": "3",
-      "id": 6
     }
   ]
 }

@@ -10,10 +10,10 @@ export default class EmployeeCard extends Component {
                 <img src={employee} className="emp--icon" alt="employee-icon" />
                 {this.props.employee.name}
                 <Link className="nav-link" to={`/employees/${this.props.employee.id}`}>Details</Link>
-                <button
+                {/* <button
                 onClick={ () => {this.props.deleteEmployee(this.props.employee.id)}}
                 className="btn btn-danger"
-                >Delete</button>
+                >Delete</button> */}
             </h5>
         )
     }
