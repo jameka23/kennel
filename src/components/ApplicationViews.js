@@ -1,5 +1,5 @@
 // This will handle all the routing 
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from "react"
 import AnimalList from './animal/AnimalList'
 import LocationList from './location/LocationList'
@@ -17,9 +17,13 @@ import LocationDetail from './location/LocationDetail'
 import AnimalForm from './animal/AnimalForm'
 import EmployeeForm from './employee/EmployeeForm'
 import OwnerForm from './owner/OwnerForm'
+import Login from './authentication/Login'
 
 
 class ApplicationViews extends Component {
+
+    //check for authentication is in local session storage
+    isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
     state = {
         animals: [],
@@ -135,6 +139,7 @@ class ApplicationViews extends Component {
     render() {
         return (
             <React.Fragment>
+                <Route path="/login" component={Login} />
                 <Route exact path="/" render={(props) => {
                     return <LocationList locations={this.state.locations} />
                 }} />
