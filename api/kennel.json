@@ -43,16 +43,16 @@
       "name": "Zoe LeBlanc"
     },
     {
-      "id": 4,
-      "name": "Blaise Roberts"
-    },
-    {
       "id": 5,
       "name": "Jackson Bluent"
     },
     {
       "id": 6,
       "name": "Christy Plum"
+    },
+    {
+      "name": "Jeremy Stuart",
+      "id": 7
     }
   ],
   "locations": [

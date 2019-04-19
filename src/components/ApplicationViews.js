@@ -15,7 +15,7 @@ import EmployeeDetail from './employee/EmployeeDetail';
 import OwnerDetail from './owner/OwnerDetail'
 import LocationDetail from './location/LocationDetail'
 import AnimalForm from './animal/AnimalForm'
-
+import EmployeeForm from './employee/EmployeeForm'
 
 
 class ApplicationViews extends Component {
@@ -91,6 +91,15 @@ class ApplicationViews extends Component {
         })
     }
 
+    // this function will make a post to the db for employees
+    addEmployee = newEmployeeObj => {
+        EmployeeManager.post(newEmployeeObj)
+        .then(() => EmployeeManager.all())
+        .then(employees => {
+            this.props.history.push("/employees")
+            this.setState({employees: employees})
+        })
+    }
 
     // deleteItem = (id,resource) => {
     //     APIManager.delete(id, resource)
@@ -153,8 +162,11 @@ class ApplicationViews extends Component {
                         deleteAnimal={this.deleteAnimal} />
                 }} />
                 <Route exact path="/employees" render={(props) => {
-                    return <EmployeeList employees={this.state.employees} deleteEmployee={this.deleteEmployee} />
+                    return <EmployeeList {...props} employees={this.state.employees} deleteEmployee={this.deleteEmployee} />
                 }} />
+                <Route path="/employees/new" render={(props) => {
+                    return <EmployeeForm {...props} addEmployee={this.addEmployee} />
+                }}/>
                 <Route path="/employees/:employeeId(\d+)" render={(props) => {
                     let employee = this.state.employees.find(emp => 
                         emp.id === parseInt(props.match.params.employeeId)    
