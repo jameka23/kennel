@@ -9,7 +9,7 @@ export default class AnimalCard extends Component {
             <div key={this.props.animal.id} className="card">
                 <div className="card-body">
                     <h5 className="card-title">
-                        <img src={dog} className="icon--dog" />
+                        <img src={dog} className="icon--dog" alt="dog--icon"/>
                         {this.props.animal.name}
                         <Link className="nav-link" to={`/animals/${this.props.animal.id}`}>Details</Link>
                         <button
