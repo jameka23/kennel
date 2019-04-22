@@ -18,6 +18,7 @@ import AnimalForm from './animal/AnimalForm'
 import EmployeeForm from './employee/EmployeeForm'
 import OwnerForm from './owner/OwnerForm'
 import Login from './authentication/Login'
+import AnimalEdit from './animal/AnimalEdit'
 
 
 class ApplicationViews extends Component {
@@ -115,6 +116,18 @@ class ApplicationViews extends Component {
             this.setState({owners:owners})
         })
     }
+
+    // this function will update an animal using a put request to the db
+    updateAnimal = (updatedAnimalObj, id) => {
+        AnimalManager.put(updatedAnimalObj, id)
+        .then(() => AnimalManager.all())
+        .then(animals => {
+            this.setState({
+                animals: animals
+            })
+        })
+    }
+
     // deleteItem = (id,resource) => {
     //     APIManager.delete(id, resource)
     //     .then(() => fetch(`http://localhost:5002/${resource}`))
@@ -186,6 +199,9 @@ class ApplicationViews extends Component {
 
                     return <AnimalDetail animal={animal}
                         deleteAnimal={this.deleteAnimal} />
+                }} />
+                <Route path="/animals/:animalId(\d+)/edit" render={(props) => {
+                    return <AnimalEdit animals={this.state.animals} employees={this.state.employees} updateAnimal={this.updateAnimal} {...props} />
                 }} />
                 <Route exact path="/employees" render={(props) => {
                         if (this.isAuthenticated()) {

@@ -2,7 +2,8 @@
   "animals": [
     {
       "id": 1,
-      "name": "Doodles",
+      "name": "Doodlers",
+      "breed": "Corgi",
       "employeeId": 1
     },
     {
