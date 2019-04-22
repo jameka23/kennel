@@ -34,13 +34,24 @@ export default Object.create(null, {
       }
     },
     post: {
-      value: function (newAnimalObj) {
+      value: function (newObj) {
         return fetch(`${remoteURL}/${this.resource}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(newAnimalObj)
+          body: JSON.stringify(newObj)
+        }).then(r => r.json())
+      }
+    },
+    put: {
+      value: function (updatedObj, id) {
+        return fetch(`${remoteURL}/${this.resource}/${id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(updatedObj)
         }).then(r => r.json())
       }
     }

@@ -32,6 +32,8 @@ export default class Login extends Component {
                 password: this.state.password
             })
         )
+        // redirect to locations page after logging in
+        this.props.history.push("/")
     }
 
     render() {
